@@ -1,5 +1,7 @@
-from rurple import Cargar_mapa
+from rurple import cargar_mapa, cargar_instrucciones 
 
 nombre = input("Ingrese el nombre del archivo que desea abrir: ")
+inst = input("Ingrese el nombre del archido de las insrucciones: ")
 
-print (Cargar_mapa(nombre))
+print (cargar_mapa(nombre))
+print (cargar_instrucciones(inst))
