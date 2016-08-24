@@ -7,6 +7,13 @@ def cargar_mapa (nombre):
 	mapa.close()
 	return lista_mapa
 
+	an = len(lista_mapa[0][0])
+	return an
+
+	alt = len(lista_mapa/an)
+	return alt
+
+
 def cargar_instrucciones (inst):
 	ins = open(inst, "r")
 	lista_instrucciones = []
