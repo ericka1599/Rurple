@@ -16,3 +16,11 @@ def cargar_instrucciones (inst):
 		lista_instrucciones.append(list(i.strip()))
 	ins.close()
 	return lista_instrucciones
+
+def hallar_posicion ():
+	for i in range(lista_mapa):
+		if i == "*":
+			return ">"
+		
+
+

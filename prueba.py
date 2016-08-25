@@ -9,4 +9,3 @@ if des == 1:
 	
 print (cargar_mapa(nombre))
 print (cargar_instrucciones(inst))
-print (lista_mapa)
