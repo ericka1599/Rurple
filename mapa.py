@@ -1,34 +1,17 @@
 class Mapa ():
-	def __init__ (self, largo, ancho, monedas):
+	def __init__ (self, ancho, alto):
 		self.largo = largo
 		self.ancho = ancho
-		self.monedas = monedas
-
-	def cargar_mapa (nombre):
-		mapa = open(nombre, "r")
-		lista_mapa = [ ]
-
-		for i in mapa:
-			lista_mapa.append(list(i.strip()))
-		mapa.close()
-		return lista_mapa
-
-	def cargar_instrucciones (inst):
-		ins = open(inst, "r")
-		lista_instrucciones = []
-
-		for i in ins:
-			lista_instrucciones.append(list(i.strip()))
-		ins.close()
-		return lista_instrucciones
+		self.monedas = []
+		slef.robot = None
 	
-	def medir_largo (self):
-		largo = len(lista_mapa[0,0])
-		self.largo = largo
-
 	def medir_ancho (self):
-		ancho = len(lista_mapa/largo)
+		ancho = len(lista_mapa[0,0])
 		self.ancho = ancho
+
+	def medir_alto (self):
+		alto = len(lista_mapa/ancho)
+		self.largo = largo
 
 	def encontrar_monedas (self):
 		moneda_encontrada = False 
@@ -37,7 +20,4 @@ class Mapa ():
 			if i != 0:
 				moneda_encontrada = True
 				monedas_encontradas += 1
-
-	def  
-
 
