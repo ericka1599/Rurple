@@ -3,8 +3,8 @@ from mapa import medir_ancho
 import time 
 class Robot(object):
 	def __init__ (self, x, y):
-		self.x = x
-		self.y = y
+		self.x = medir_ancho
+		self.y = medir_alto
 		self.monedas = 0
 		self.direccion = 'UP'
 		self.mapa = None 
@@ -18,6 +18,8 @@ class Robot(object):
 		resultado += " " + ancho * (alto - (y + 1))
 		return resultado
 
+
+#Aqui deberia ser con las instrucciones
 		steps = 19 
 		for i in range (steps):
 			time.sleep(0.2)

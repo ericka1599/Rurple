@@ -1,3 +1,5 @@
+from mapa import encontrar_monedas
+from robot import mostrar_robot
 def cargar_mapa (nombre):
 	mapa = open(nombre, "r")
 	lista_mapa = [ ]
@@ -16,13 +18,18 @@ def cargar_instrucciones (inst):
 	ins.close()
 	return lista_instrucciones
 
-def crear (mapa, monedas, robot):
-	mapa = Mapa (len(lista_mapa[0])) , len(lista_mapa)
-	for y in range(len(lista_mapa)):
-		for x in range(len(lista_mapa[y])):
-			if lista_mapa [x][y] = "*":
-				robot = Robot (x, y)
-				robot 
+def mostrar_mapa ():
+	for i in range(lista_mapa):
+		if i == 0:
+			return " "
+		elif i != 0 :
+			return i 
+			monedas_encontradas.append[i]
+		elif i == "*":
+			return Robot(mostrar_robot)
+
+
+
 
 		
 
