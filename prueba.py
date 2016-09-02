@@ -7,7 +7,7 @@ des = int(input("Ingrese el numero del archido de las instrucciones " '\n' "1. i
 if des == 1:
 	inst = "instrucciones/instrucciones1.txt"
 
-ancho = 
+ancho = mapa
 	
 print (cargar_mapa(nombre))
 print (cargar_instrucciones(inst))

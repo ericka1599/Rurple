@@ -26,13 +26,19 @@ class Mapa ():
 			resultado += "\n"
 
 	def contar_moneda (self):
+		conteo = 0 
 		for y in range(self.altura):
 			for x in range(self.ancho):
 				if moneda.y == y and moneda.x == x:
-					conteo += moneda
+					encontrado = True 
+					conteo += 1
+					break 
+			return conteo 
 
 	def quitar_moneda (self):
 		for y in range(self.altura):
 			for x in range(self.ancho):
 				if encontrado == True :
 					self.x and self.y += " "
+
+	def 
