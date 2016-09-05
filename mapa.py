@@ -2,7 +2,7 @@ class Mapa ():
 	def __init__ (self, ancho, alto):
 		self.largo = largo
 		self.ancho = ancho
-		self.moneda = []
+		self.monedas = []
 		slef.robot = None
 
 
@@ -10,16 +10,16 @@ class Mapa ():
 		self.robot = robot
 	
 	def contar_moneda (self, moneda):
-		self.moneda.append(moneda)
+		self.monedas.append(moneda)
 
 	def dibujar_mapa (self):
 		resultado = ""
 		for y in range(self.altura):
 			for x in range(self.ancho):
 				if moneda.x == x and moneda.y == y:
-					resultado += moneda 
+					resultado += self.contar_moneda(x, y) 
 				elif robot.x == x and robot.y == y:
-					resultado += robot 
+					resultado += self.dibujar_robot 
 				else:
 					resultado += " "
 
