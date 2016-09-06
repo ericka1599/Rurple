@@ -9,7 +9,7 @@ class Mapa ():
 	def asignar_robot (self, robot):
 		self.robot = robot
 	
-	def contar_moneda (self, moneda):
+	def poner_moneda (self, moneda):
 		self.monedas.append(moneda)
 
 	def dibujar_mapa (self):
@@ -27,12 +27,11 @@ class Mapa ():
 
 	def contar_moneda (self):
 		conteo = 0 
-		for y in range(self.altura):
-			for x in range(self.ancho):
-				if moneda.y == y and moneda.x == x:
-					encontrado = True 
-					conteo += 1
-					break 
+		for moneda in self.moneda:
+
+			if moneda.y == y and moneda.x == x:
+				conteo += 1
+				break 
 			return conteo 
 
 	def quitar_moneda (self):
