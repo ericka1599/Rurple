@@ -1,16 +1,9 @@
-from mapa import dibujar_mapa
+from mapa import Mapa
+from robot import Robot
+from monedas import Monedas
 
-de = int(input("Ingrese el numero del archivo que desea abrir " '\n' "1. mapas/mapa1.txt" '\n'))
-if de == 1 :
-	nombre = "mapas/mapa1.txt"
-des = int(input("Ingrese el numero del archivo de las instrucciones " '\n' "1. instrucciones/instrucciones1.txt" '\n'))
-if des == 1:
-	inst = "instrucciones/instrucciones1.txt"
-
-ancho = len(mapa[0])
-for i in range(len(mapa)):
-	altura = len(mapa)- (len(mapa) - 1)
-	ancho = i / altura
+ancho = len(mapa[0][0])
+alto = 
 
 def cargar_mapa (nombre):
 	mapa = open(nombre, "r")
@@ -41,9 +34,6 @@ def mostrar_mapa ():
 			return Robot(mostrar_robot)
 
 
-
-print (cargar_mapa(nombre))
-print (cargar_instrucciones(inst))
 
 		
 
