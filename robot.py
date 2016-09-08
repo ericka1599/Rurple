@@ -2,7 +2,7 @@ class Robot(object):
 	def __init__ (self, x, y):
 		self.x = medir_ancho
 		self.y = medir_alto
-		self.moneda = 0
+		self.monedas = 0
 		self.direccion = 0
 		self.mapa = None 
 
@@ -10,8 +10,7 @@ class Robot(object):
 		self.mapa = mapa
 
 	def  rotar (self):
-		if self.direccion = (self.direccion + 1) % 4
-
+		if self.direccion == (self.direccion + 1) % 4:
 
 	def dibujar (self):
 		if self.direccion == 0:
@@ -23,15 +22,10 @@ class Robot(object):
 		else:
 			return '↓'
 
-	def recoger_monedas (self):
-		cont = 0
-		encontrado = False 
-		for y in range(self.altura):
-			for x in range(self.ancho):
-				if moneda.x == x and moneda.y == y:
-					if robot.x == x and robot.y == y:
-						encontrado = True 
-						cont += moneda 
+	def recoger (self):
+		if self.mapa.contar_monedas(self.x, self.y) > 0:
+			self.monedas += 1
+			self.mapa.remover(x, y)
 
 	def mover (self):
 		if self.rotacion == 0:

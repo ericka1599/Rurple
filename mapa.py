@@ -12,14 +12,14 @@ class Mapa ():
 	def poner_moneda (self, moneda):
 		self.monedas.append(moneda)
 
-	def dibujar_mapa (self):
+	def dibujar (self):
 		resultado = ""
 		for y in range(self.altura):
 			for x in range(self.ancho):
-				if moneda.x == x and moneda.y == y:
-					resultado += self.contar_moneda(x, y) 
-				elif robot.x == x and robot.y == y:
-					resultado += self.dibujar_robot 
+				if x == self.robot.x and y == self.robot.y:
+					resultado =+ self.robot.dibujar()
+				elif self.contar_monedas(x, y) > 0:
+					resultado =+ self.contar_monedas(x, y)
 				else:
 					resultado += " "
 
@@ -27,17 +27,20 @@ class Mapa ():
 
 	def contar_moneda (self):
 		conteo = 0 
-		for moneda in self.moneda:
+		for moneda in self.monedas:
 
 			if moneda.y == y and moneda.x == x:
 				conteo += 1
 				break 
-			return conteo 
+		return conteo 
 
-	def quitar_moneda (self):
-		for y in range(self.altura):
-			for x in range(self.ancho):
-				if encontrado == True :
-					self.x and self.y += " "
+	def remover (self, x, y):
+		coincidencia = -1
+		for indice in range(len(self.monedas)):
+			moneda = self.monedas[indice]
+			if moneda.x == x and moneda.y == y:
+				coincidencia = indice
+				break
 
-	def 
+		if coincidencia >= 0:
+			self.monedas.pop (coincidencia)

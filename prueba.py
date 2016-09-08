@@ -1,13 +1,17 @@
-from rurple import cargar_mapa, cargar_instrucciones 
+def cargar_mapa (nombre):
+	mapa = open(nombre, "r")
+	lista_mapa = [ ]
 
-de = int(input("Ingrese el numero del archivo que desea abrir " '\n' "1. mapas/mapa1.txt" '\n'))
-if de == 1 :
-	nombre = "mapas/mapa1.txt"
-des = int(input("Ingrese el numero del archido de las instrucciones " '\n' "1. instrucciones/instrucciones1.txt" '\n'))
-if des == 1:
-	inst = "instrucciones/instrucciones1.txt"
+	for i in mapa:
+		lista_mapa.append(list(i.strip()))
+	mapa.close()
+	return lista_mapa
 
-ancho = mapa
-	
-print (cargar_mapa(nombre))
-print (cargar_instrucciones(inst))
+def cargar_instrucciones (inst):
+	ins = open(inst, "r")
+	lista_instrucciones = []
+
+	for i in ins:
+		lista_instrucciones.append(list(i.strip()))
+	ins.close()
+	return lista_instrucciones

@@ -1,4 +1,8 @@
-from mapa import dibujar_mapa
+from mapa import Mapa
+from robot import Robot
+from moneda import Moneda
+from prueba import cargar_mapa , cargar_instrucciones
+import time 
 
 de = int(input("Ingrese el numero del archivo que desea abrir " '\n' "1. mapas/mapa1.txt" '\n'))
 if de == 1 :
@@ -7,44 +11,33 @@ des = int(input("Ingrese el numero del archivo de las instrucciones " '\n' "1. i
 if des == 1:
 	inst = "instrucciones/instrucciones1.txt"
 
-ancho = len(mapa[0])
-for i in range(len(mapa)):
-	altura = len(mapa)- (len(mapa) - 1)
-	ancho = i / altura
 
-def cargar_mapa (nombre):
-	mapa = open(nombre, "r")
-	lista_mapa = [ ]
+lista_mapa = cargar_mapa(nombre)
+lsita_instrucciones = cargar_instrucciones(inst)
 
-	for i in mapa:
-		lista_mapa.append(list(i.strip()))
-	mapa.close()
-	return lista_mapa
+for y in range(len(lista_mapa[0])): #alto
+	for x in range(lista_mapa): #ancho
+		if lista_mapa [y][x] == '*':
+			robot = Robot(x, y)
+			robot.colocar_en_mapa(mapa)
+			mapa.asignar_robot(robot)
+		elif int(lista_mapa[y][x]) > 0:
+			for i in range(int(lista_mapa[y][x])):
+				moneda = Moneda(x, y)
+				mapa.poner_moneda(moneda)
 
-def cargar_instrucciones (inst):
-	ins = open(inst, "r")
-	lista_instrucciones = []
+for i in lsita_instrucciones:
 
-	for i in ins:
-		lista_instrucciones.append(list(i.strip()))
-	ins.close()
-	return lista_instrucciones
+	if i == 'MOVE':
+		robot.mover()
+	elif i == 'ROTATE':
+		robot.rotar()
+	else:
+		robot.recoger()
 
-def mostrar_mapa ():
-	for i in range(lista_mapa):
-		if i == 0:
-			return " "
-		elif i != 0 :
-			return i 
-			monedas_encontradas.append[i]
-		elif i == "*":
-			return Robot(mostrar_robot)
+	print ("Monedas que recoger: " + mapa.contar_monedas())
+	print ("Tus monedas: " + robot.monedas)
+	print (' ')
 
-
-
-print (cargar_mapa(nombre))
-print (cargar_instrucciones(inst))
-
-		
-
-
+	print (mapa.dibujar())
+	time.sleep (0.2)
