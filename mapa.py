@@ -14,7 +14,7 @@ class Mapa ():
 
 	def dibujar (self):
 		resultado = ""
-		for y in range(self.altura):
+		for y in range(self.alto):
 			for x in range(self.ancho):
 				if x == self.robot.x and y == self.robot.y:
 					resultado =+ self.robot.dibujar()
@@ -42,10 +42,10 @@ class Mapa ():
 				coincidencia = indice
 				break
 
-		if coincidencia >= 0:
-			self.monedas.pop (coincidencia)
-				coincidencia = indice 
-				break 
+			if coincidencia >= 0:
+				self.monedas.pop (coincidencia)
+				coincidencia = indice
+				break
 
-		if indice >= 0:
-			self.monedas.pop(indice)
+			if indice >= 0:
+				self.monedas.pop(indice)
