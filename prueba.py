@@ -7,7 +7,6 @@ def cargar_mapa (nombre):
 	mapa.close()
 	return lista_mapa
 
-<<<<<<< HEAD
 def cargar_instrucciones (inst):
 	ins = open(inst, "r")
 	lista_instrucciones = []
@@ -16,8 +15,4 @@ def cargar_instrucciones (inst):
 		lista_instrucciones.append(list(i.strip()))
 	ins.close()
 	return lista_instrucciones
-=======
 	
-print (cargar_mapa(nombre))
-print (cargar_instrucciones(inst))
->>>>>>> origin/master
