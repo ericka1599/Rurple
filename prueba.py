@@ -12,7 +12,7 @@ def cargar_instrucciones (inst):
 	lista_instrucciones = []
 
 	for i in ins:
-		lista_instrucciones.append(list(i.strip()))
+		lista_instrucciones.append(i.strip())
 	ins.close()
 	return lista_instrucciones
 	

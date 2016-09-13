@@ -16,7 +16,7 @@ lista_instrucciones = cargar_instrucciones(inst)
 
 ancho = len(lista_mapa[0])
 alto = len(lista_mapa)
-
+mapa = Mapa(ancho, alto)
 
 for y in range(alto): 
 	for x in range(ancho): 
@@ -27,7 +27,7 @@ for y in range(alto):
 		elif int(lista_mapa[y][x]) > 0:
 			for i in range(int(lista_mapa[y][x])):
 				moneda = Moneda(x, y)
-				Mapa.poner_moneda(moneda)
+				mapa.poner_moneda(moneda)
 
 for i in lista_instrucciones:
 
@@ -38,13 +38,6 @@ for i in lista_instrucciones:
 	else:
 		robot.recoger()
 
-	for i in ins:
-		lista_instrucciones.append(list(i.strip()))
-	print (lista_instrucciones)
+	print (mapa.dibujar())
+	time.sleep (0.2)
 
-print ("Monedas que recoger: " + mapa.contar_monedas())
-print ("Tus monedas: " + robot.monedas)
-print (' ')
-
-print (mapa.dibujar())
-time.sleep (0.2)

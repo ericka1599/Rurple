@@ -17,15 +17,16 @@ class Mapa ():
 		for y in range(self.alto):
 			for x in range(self.ancho):
 				if x == self.robot.x and y == self.robot.y:
-					resultado =+ self.robot.dibujar()
+					resultado += self.robot.dibujar()
 				elif self.contar_monedas(x, y) > 0:
-					resultado += self.contar_monedas(x, y) 
+					resultado += str(self.contar_monedas(x, y)) 
 				else:
 					resultado += " "
 
 			resultado += "\n"
+		return resultado
 
-	def contar_moneda (self, x, y):
+	def contar_monedas (self, x, y):
 		conteo = 0 
 		for moneda in self.monedas:
 			if moneda.y == y and moneda.x == x:
@@ -33,7 +34,7 @@ class Mapa ():
 				break 
 		return conteo 
 
-	def quitar_moneda (self):
+	def quitar_moneda (self, x, y):
 
 		coincidencia = -1
 		for indice in range(len(self.monedas)):

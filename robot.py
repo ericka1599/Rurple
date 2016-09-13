@@ -1,7 +1,7 @@
 class Robot(object):
 	def __init__ (self, x, y):
-		self.x = ancho
-		self.y = alto
+		self.x = x
+		self.y = y
 		self.monedas = 0
 		self.direccion = 0
 		self.mapa = None 
@@ -10,6 +10,7 @@ class Robot(object):
 		self.mapa = mapa
 
 	def  rotar (self):
+		print ("Direccion", self.direccion)
 		if self.direccion == 0:
 			self.direccion = 1
 		elif self.direccion == 1:
@@ -21,32 +22,32 @@ class Robot(object):
 			
 	def dibujar (self):
 		if self.direccion == 0:
-			return '↑'
+			return 'A'
 		elif self.direccion == 1:
-			return '→'
+			return '>'
 		elif self.direccion == 2:
-			return '←'
+			return 'v'
 		else:
-			return '↓'
+			return '<'
 
 	def recoger (self):
 		if self.mapa.contar_monedas(self.x, self.y) > 0:
 			self.monedas += 1
-			self.mapa.remover(x, y)
+			self.mapa.quitar_moneda(self.x, self.y)
 
 	def mover (self):
-		if self.rotacion == 0:
+		if self.direccion == 0:
 			self.y -= 1
 			if self.y < 0:
 				self.y = 0
-		elif self.rotacion == 1:
+		elif self.direccion == 1:
 			self.x += 1 
-			if self.x > ancho :
-				self.x = ancho
-		elif self.rotacion == 2:
+			if self.x > self.mapa.ancho :
+				self.x = self.mapa.ancho
+		elif self.direccion == 2:
 			self.y += 1 
-			if self.y > alto :
-				self.y = alto
+			if self.y > self.mapa.alto :
+				self.y = self.mapa.alto
 		else :
 			self.x -= 1
 			if self.x < 0:
