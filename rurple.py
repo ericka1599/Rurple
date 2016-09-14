@@ -4,12 +4,12 @@ from monedas import Moneda
 from prueba import cargar_mapa , cargar_instrucciones
 import time 
 
-de = int(input("Ingrese el numero del archivo que desea abrir " '\n' "1. mapas/mapa1.txt" '\n'))
+de = int(input("Ingrese el numero del archivo que desea abrir " '\n' "1. mapas/mapa2.txt" '\n'))
 if de == 1 :
-	nombre = "mapas/mapa1.txt"
-des = int(input("Ingrese el numero del archivo de las instrucciones " '\n' "1. instrucciones/instrucciones1.txt" '\n'))
+	nombre = "mapas/mapa2.txt"
+des = int(input("Ingrese el numero del archivo de las instrucciones " '\n' "1. instrucciones/instrucciones2.txt" '\n'))
 if des == 1:
-	inst = "instrucciones/instrucciones1.txt"
+	inst = "instrucciones/instrucciones2.txt"
 
 lista_mapa = cargar_mapa(nombre)
 lista_instrucciones = cargar_instrucciones(inst)

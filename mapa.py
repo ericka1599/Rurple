@@ -31,7 +31,7 @@ class Mapa ():
 		for moneda in self.monedas:
 			if moneda.y == y and moneda.x == x:
 				conteo += 1
-				break 
+				
 		return conteo 
 
 	def quitar_moneda (self, x, y):
